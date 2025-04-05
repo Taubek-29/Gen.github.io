@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваше портфолио</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .portfolio-theme {
+            min-height: 100vh;
+            padding: 80px 5%;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .portfolio-title h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-title p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .portfolio-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 100px;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: white;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 1.2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+        
+        .edit-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            color: #333;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+        
+        .edit-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Тема: Минимализм */
+        .theme-minimal {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+        
+        .theme-minimal .section h2::after {
+            background: #6e8efb;
+        }
+        
+        .theme-minimal .skill {
+            background: rgba(110, 142, 251, 0.1);
+            color: #333;
+        }
+        
+        .theme-minimal .project-card {
+            background: white;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .theme-minimal .contact-info a {
+            color: #6e8efb;
+            border-bottom-color: #6e8efb;
+        }
+        
+        /* Тема: Креативный */
+        .theme-creative {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+        }
+        
+        /* Тема: Технологичный */
+        .theme-tech {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+        }
+        
+        /* Тема: Элегантный */
+        .theme-elegant {
+            background: linear-gradient(135deg, #614385 0%, #516395 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-theme theme-minimal" id="portfolio-theme">
+        <div class="portfolio-header">
+            <div class="portfolio-title">
+                <h1 id="portfolio-name">Иван Иванов</h1>
+                <p id="portfolio-job">Веб-разработчик</p>
+            </div>
+            <div class="theme-selector">
+                <select id="theme-selector">
+                    <option value="minimal">Минимализм</option>
+                    <option value="creative">Креативный</option>
+                    <option value="tech">Технологичный</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="portfolio-content">
+            <section class="section about-section">
+                <h2>Обо мне</h2>
+                <p id="about-text">Здесь будет информация о вас...</p>
+            </section>
+            
+            <section class="section skills-section">
+                <h2>Навыки</h2>
+                <div class="skills-list" id="skills-list">
+                    <!-- Навыки будут здесь -->
+                </div>
+            </section>
+            
+            <section class="section projects-section">
+                <h2>Проекты</h2>
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Проекты будут здесь -->
+                </div>
+            </section>
+            
+            <section class="section contact-section">
+                <h2>Контакты</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="#" id="contact-email">example@mail.com</a></p>
+                </div>
+            </section>
+        </div>
+        
+        <button class="edit-btn" onclick="window.location.href='index.html'">Редактировать</button>
+    </div>
+
+    <script src="portfolio-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Creator | Создай крутое портфолио</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    
+    <header class="animate__animated animate__fadeIn">
+        <nav>
+            <div class="logo">PortfolioGen</div>
+            <div class="nav-links">
+                <a href="#features">Возможности</a>
+                <a href="#examples">Примеры</a>
+                <a href="#start">Создать</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero animate__animated animate__fadeIn animate__delay-1s">
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInUp">Создай портфолио, <br>которое <span class="highlight">запомнят</span></h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Профессиональный конструктор с потрясающими анимациями и эффектами</p>
+                <a href="#start" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-2s">Начать создание</a>
+            </div>
+            <div class="hero-scroll animate__animated animate__fadeIn animate__delay-3s">
+                <span>Листайте вниз</span>
+                <div class="scroll-icon"></div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-cards">
+                <div class="card animate__animated">
+                    <div class="icon">✨</div>
+                    <h3>Уникальные шаблоны</h3>
+                    <p>10+ стильных вариантов оформления</p>
+                </div>
+                <div class="card animate__animated">
+                    <div class="icon">🚀</div>
+                    <h3>Мгновенная генерация</h3>
+                    <p>Портфолио готово за 5 минут</p>
+                </div>
+                <div class="card animate__animated">
+                    <div class="icon">🎨</div>
+                    <h3>Гибкая настройка</h3>
+                    <p>Изменяйте цвета, шрифты и анимации</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="examples">
+            <h2>Примеры портфолио</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #6e8efb, #a777e3);">
+                    <div class="portfolio-content">
+                        <h3>Минимализм</h3>
+                        <p>Чистый и элегантный дизайн</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #ff7e5f, #feb47b);">
+                    <div class="portfolio-content">
+                        <h3>Яркий акцент</h3>
+                        <p>Для творческих профессий</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" style="background: linear-gradient(135deg, #43cea2, #185a9d);">
+                    <div class="portfolio-content">
+                        <h3>Технологичный</h3>
+                        <p>Современные эффекты</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="start" class="creator-section">
+            <h2>Создайте своё портфолио</h2>
+            <p class="subtitle">Заполните информацию о себе, и мы сгенерируем уникальное портфолио</p>
+            
+            <form id="portfolio-form" class="portfolio-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="job">Профессия</label>
+                        <input type="text" id="job" required placeholder="Веб-разработчик">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="about">О себе</label>
+                    <textarea id="about" required placeholder="Расскажите о своих навыках и опыте..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="skills">Навыки (через запятую)</label>
+                    <input type="text" id="skills" required placeholder="HTML, CSS, JavaScript, Дизайн">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projects">Проекты (через запятую)</label>
+                    <input type="text" id="projects" required placeholder="Корпоративный сайт, Лендинг, Мобильное приложение">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="example@mail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="theme">Выберите стиль</label>
+                    <select id="theme">
+                        <option value="minimal">Минимализм</option>
+                        <option value="creative">Креативный</option>
+                        <option value="tech">Технологичный</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-generate">Сгенерировать портфолио</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 PortfolioGen. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
